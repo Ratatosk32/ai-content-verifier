@@ -1,0 +1,29 @@
+{
+  "name": "ai-content-verifier",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI Detection Browser Extension with Serverless Backend",
+  "main": "index.js",
+  "scripts": {
+    "extension": "tsc && copyfiles -u 1 src/*.json src/*.html dist",
+    "watch": "tsc -w"
+  },
+  "keywords": [
+    "ai",
+    "detector",
+    "chrome-extension",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.254",
+    "@types/node": "^25.0.9",
+    "@vercel/node": "^5.5.25",
+    "copyfiles": "^2.4.1",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^4.13.10"
+  }
+}
