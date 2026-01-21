@@ -1,16 +1,15 @@
 {
-    "manifest_version": 3,
-    "name": "AI Detector Pro",
-    "version": "1.0.0",
-    "description": "Real-time AI content detection using serverless inference.",
-    "permissions": ["activeTab", "scripting"],
-    "content_scripts": [
+    "name": "AI Content Verifier",
+    "short_name": "AI Verifier",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "icons": [
       {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
+        "src": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
+        "sizes": "512x512",
+        "type": "image/png"
       }
-    ],
-    "action": {
-      "default_popup": "popup.html"
-    }
+    ]
   }
