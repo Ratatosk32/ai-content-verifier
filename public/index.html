@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
     <title>AI Verifier</title>
     <link rel="manifest" href="/app.webmanifest">
     <meta name="theme-color" content="#2563eb">
@@ -17,10 +18,25 @@
 <body>
     <div class="card">
         <h2>AI Content Detector</h2>
-        <textarea id="inputText" placeholder="Paste text here (min 200 chars)..."></textarea>
+        <textarea id="inputText" placeholder="Paste text here..."></textarea>
         <button onclick="analyzeText()">Analyze Text</button>
         <div id="result"></div>
     </div>
+
+    <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ddd;">
+
+    <div class="card" id="call-section">
+        <h2>P2P Secure Call</h2>
+        <p style="font-size: 0.8rem; color: #666;">Your ID :</p>
+        <div id="my-id" style="background: #e7f3ff; padding: 10px; border-radius: 10px; font-weight: bold; color: #2563eb; margin-bottom: 10px;">Connecting...</div>
+        
+        <input type="text" id="remote-id" placeholder="Enter Friend's ID" style="width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd; box-sizing: border-box;">
+        <button onclick="makeCall()" style="background: #16a34a; color: white; border: none; padding: 15px; border-radius: 12px; width: 100%; font-weight: bold;">📞 Start Voice Call</button>
+        
+        <div id="call-status" style="margin-top: 10px; font-weight: bold;"></div>
+        <audio id="remote-audio" autoplay></audio>
+    </div>
+    
 
     <script>
         async function analyzeText() {
